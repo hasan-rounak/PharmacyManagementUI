@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from "@angular/router";
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'medicine-add',
@@ -7,10 +8,11 @@ import { Router} from "@angular/router";
 })
 export class MedicineAddComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
+
 
   BackToSearchResults() {
     this.router.navigate([

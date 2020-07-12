@@ -1,11 +1,48 @@
-<div class="container-fluid  common-pad">
-    <div class="col-12 row p-0 pb-2">
-        <div class="col-xl-6 p-0 col-6">
-            <h5 class="float-left search-ihead font-semi-bold pr-md-4 pr-2">Search Medicine</h5>
+<div class="container">
+    
+        <div class="col-12 row p-0 pb-2"></div>
+        <div class="col-12 row p-0 pb-2">
+            <div class="col-xl-6 p-0 col-6">
+                <h5 class="float-left search-ihead font-semi-bold pr-md-4 pr-2">Search Medicine</h5>
+            </div>
+            <div class="col-xl-6 col-6 p-0  text-right" >
+                <button type="button" id="add-medicine" class="btn btn-primary font-semi-bold button-border "(click)="AddMedicine()">Add Medicine</button> 
+            </div>
         </div>
-        <div class="col-xl-6 col-6 p-0  text-right" >
-            <button type="button" id="add-medicine" class="btn btn-primary font-semi-bold button-border"
-            (click)="AddMedicine()">Add Medicine</button> 
+        <div class="col-12 row p-0 pb-2">
+            <form #searchFormEle (keyup.enter)="SearchMedicine()" autocomplete="off">
+                
+                <input kendoTextBox  class="form-control col-12" name="search-input" [(ngModel)]="inputName" [attr.maxlength]=10>
+            </form>
+            <!-- <a class="search-icon" ><img src="assets/images/icon-search.png" (click)="SearchMedicine()">
+            </a> -->
+            <button type="button" id="search-medicine" class="btn btn-primary font-semi-bold button-border" (click)="SearchMedicine()">Search</button> 
         </div>
-    </div>
+
+                    <div class="col-12 row p-0 pb-2">
+                        <h5 class="col-md-4 col-12 p-0  font-semi-bold">List of Available Medicine</h5>
+                    </div>
+                   
+                    <div class="col-12 row p-0 pb-2 grid-wrapper">
+                        <kendo-grid class="col-12 p-0 min-hight-280" [data]="medicines" scrollable="virtual"
+                            [sortable]="{allowUnsort: false}" [rowHeight]="21">
+                            <kendo-grid-column field="name" title="Medicine Name" width="250" media="(min-width: 768px)"></kendo-grid-column>
+                            <kendo-grid-column field="brand" title="Brand" width="250" media="(min-width: 768px)"></kendo-grid-column>
+                            <kendo-grid-column field="price" title="Price" width="200" media="(min-width: 768px)"></kendo-grid-column>
+                            <kendo-grid-column field="quantity" title="quantity" width="200" media="(min-width: 768px)"></kendo-grid-column>
+                            <kendo-grid-column field="expiryDate" title="Expiry Date" width="500" media="(min-width: 768px)"></kendo-grid-column>
+                            <kendo-grid-column media="(max-width: 767px)">
+                                <ng-template kendoGridCellTemplate let-dataItem>
+                                    <dl>
+                                        <dt data-label="Medicine Name">{{dataItem.name}} </dt>
+                                        <dt data-label="Brand">{{dataItem.brand}}</dt>
+                                        <dt data-label="Price">{{dataItem.price}}</dt>
+                                        <dt data-label="quantity">{{dataItem.quantity}}</dt>
+                                        <dt data-label="Expiry Date">{{dataItem.expiryDate| date:'mediumDate'}}</dt>
+                                    </dl>
+                                </ng-template>
+                            </kendo-grid-column>
+                        </kendo-grid>
+                    </div>
+
 </div>
