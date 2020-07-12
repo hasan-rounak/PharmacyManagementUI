@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+#mainContent {
+    min-height: 100vh;
+    position: relative;
+    height: 100%;
+    padding-bottom: 30px;
+    background-color: #f4f4f4;
+}
+
+.header-bg-color {
+    background-color: #3d3a35;
+}
+
+header {
+    .header-height {
+        height: 80px;
+        padding: 0 30px;
+    }
+    .logo-img {
+        height: 70px;
+        width: 70px;
+        z-index: 5;
+        position: absolute;
+    }
+    .header-text {
+        color: #fff;
+        font-size: 18px;
+        line-height: 85px;
+        text-align: center;
+    }
+    .user-info {
+        padding-top: 1.5rem;
+        .user-name {
+            color: #fff;
+            font-size: 14px;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+.footer {
+    color: #666666;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 14px;
+    border-top: 1px solid #e9e9e9;
+}
+
