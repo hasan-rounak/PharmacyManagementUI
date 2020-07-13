@@ -3,5 +3,6 @@ export interface MedicineData {
     brand: string;
     price: number;
     quantity:number,
-    expiryDate:Date
+    expiryDate:Date,
+    status:string
 }

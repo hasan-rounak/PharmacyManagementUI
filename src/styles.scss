@@ -109,7 +109,7 @@ header {
     }
     tbody {
         tr {
-            background-color: #fff !important;
+            background-color: #fff ;
         }
     }
 }
@@ -138,3 +138,5 @@ a {
   .round {
     border-radius: 50%;
   }
+  .k-grid tr.red { background-color: #f8361c !important; }
+  .k-grid tr.yellow { background-color: #eaf825 !important; }

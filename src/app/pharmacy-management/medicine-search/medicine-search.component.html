@@ -25,23 +25,17 @@
                    
                     <div class="col-12 row p-0 pb-2 grid-wrapper">
                         <kendo-grid class="col-12 p-0 min-hight-280" [data]="medicines" scrollable="virtual"
-                            [sortable]="{allowUnsort: false}" [rowHeight]="21">
+                            [sortable]="{allowUnsort: false}" [rowHeight]="21"[rowClass]="rowCallback">
                             <kendo-grid-column field="name" title="Medicine Name" width="250" media="(min-width: 768px)"></kendo-grid-column>
                             <kendo-grid-column field="brand" title="Brand" width="250" media="(min-width: 768px)"></kendo-grid-column>
                             <kendo-grid-column field="price" title="Price" width="200" media="(min-width: 768px)"></kendo-grid-column>
                             <kendo-grid-column field="quantity" title="quantity" width="200" media="(min-width: 768px)"></kendo-grid-column>
-                            <kendo-grid-column field="expiryDate" title="Expiry Date" width="500" media="(min-width: 768px)"></kendo-grid-column>
-                            <kendo-grid-column media="(max-width: 767px)">
+                            <kendo-grid-column field="expiryDate" title="Expiry Date" width="500" media="(min-width: 768px)">
                                 <ng-template kendoGridCellTemplate let-dataItem>
-                                    <dl>
-                                        <dt data-label="Medicine Name">{{dataItem.name}} </dt>
-                                        <dt data-label="Brand">{{dataItem.brand}}</dt>
-                                        <dt data-label="Price">{{dataItem.price}}</dt>
-                                        <dt data-label="quantity">{{dataItem.quantity}}</dt>
-                                        <dt data-label="Expiry Date">{{dataItem.expiryDate| date:'mediumDate'}}</dt>
-                                    </dl>
+                                    {{dataItem.expiryDate | date: 'MM/dd/yyyy'}}
                                 </ng-template>
                             </kendo-grid-column>
+                            
                         </kendo-grid>
                     </div>
 
